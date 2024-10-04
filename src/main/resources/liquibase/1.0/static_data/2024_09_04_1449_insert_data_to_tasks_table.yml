@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: Insert_data_to_categories_table
+      author: Selminaz Kerimli
+      changes:
+        - insert:
+            tableName: tasks
+            columns:
+              - column:
+                  name: name
+                  value: Task1
+              - column:
+                  name: created_by_user
+                  value: 1
+              - column:
+                  name: status
+                  value: 1
+              - column:
+                  name: deadline
+                  value: 2024-06-09
+              - column:
+                  name: priority
+                  value: 1
+              - column:
+                  name: category_id
+                  value: 1
+
+

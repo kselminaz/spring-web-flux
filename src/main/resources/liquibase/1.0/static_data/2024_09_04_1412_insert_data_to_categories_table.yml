@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: Insert_data_to_categories_table
+      author: Selminaz Kerimli
+      changes:
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: Category1
+              - column:
+                  name: status
+                  value: 1
+
+

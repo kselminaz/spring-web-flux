@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: postgres_web_flux
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: task_management_web_flux
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres:/data/postgres
+    networks:
+      - task_management_web_flux
+
+  pgadmin:
+    depends_on:
+      - postgres
+    container_name: pgadmin4_web_flux
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: sap555p5
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin:/root/.pgadmin
+    networks:
+      - task_management_web_flux
+
+
+
+networks:
+  task_management_web_flux:
+    driver: bridge
+
+volumes:
+  postgres:
+  pgadmin:

@@ -1,0 +1,12 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/task_management_web_flux
+    username: postgres
+    password: postgres
+  jpa:
+    open-in-view: false
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yml
+    url: jdbc:postgresql://localhost:5432/task_management_web_flux
+    user: postgres
+    password: postgres
